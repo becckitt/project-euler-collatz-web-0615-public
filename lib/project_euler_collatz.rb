@@ -3,7 +3,7 @@ def even_next(n)
 end
 
 def odd_next(n)
-	3*n + 1
+	3 * n + 1
 end
 
 def next_value(n)
@@ -25,9 +25,11 @@ def collatz(n)
 end
 
 def longest_collatz
-	range = {}
-	(1000000..1).each do |num|
-		range[collatz(n).length] = collatz(n)
+	sequences = {}
+	range = (80000..1000000)
+	range.each do |num|
+		length = collatz(num).length
+		sequences[length] = num
 	end
-	range #.sort.last
+	sequences.sort.last[1]
 end
